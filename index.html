@@ -1,6 +1,13 @@
 <html>
-<head></head>
-<body bgcolor="black">
+<head>
+	<style>
+	body{
+		background-image: url("https://jaidefinichon.com/wp-content/uploads/2019/03/tumblr_mfi96yPqE31qmmxb9o1_400.jpg");
+		background-color: "black";
+	}
+	</style>
+</head>
+<body>
 	<iframe
     src="https://player.twitch.tv/?channel=jaidefinichon&parent=phantomhouse.github.io&muted=true"
     height="300"
@@ -21,12 +28,18 @@
     width="400"
     allowfullscreen>
 </iframe>
-</iframe>
-	<iframe
-    src="https://www.nonolive.com/33034672"
-    height="300"
-    width="400"
-    allowfullscreen>
-</iframe>
+<script>
+	var req = new XMLHttpRequest();
+	req.open('GET', 'https://www.nonolive.com/embed/33034672', true);
+	req.onreadystatechange = function (aEvt) {
+	  if (req.readyState == 4) {
+	     if(req.status == 200)
+	      console.log(req.responseText);
+	     else
+	      console.log("Error loading page\n");
+	  }
+	};
+	req.send(null); 
+</script>
 </body>
 </html>
